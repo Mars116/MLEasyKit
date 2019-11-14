@@ -1,0 +1,6 @@
+framework module MLEasyKit {
+  umbrella header "MLEasyKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

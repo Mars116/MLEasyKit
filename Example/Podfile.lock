@@ -1,0 +1,25 @@
+PODS:
+  - MLEasyKit (0.1.0):
+    - YYKit
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - MLEasyKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - YYKit
+
+EXTERNAL SOURCES:
+  MLEasyKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MLEasyKit: 38289307e750cc886c3a22d4ed6dbd551c3e7934
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 5e44ca038f9ca60a51d9b135d48f590e173a6815
+
+COCOAPODS: 1.8.3
