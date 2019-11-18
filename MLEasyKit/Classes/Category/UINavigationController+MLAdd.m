@@ -35,7 +35,7 @@
     if (popVC) {
         NSMutableArray *vcs = self.viewControllers.mutableCopy;
         [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController*  _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (self == popVC) {
+            if (vc == popVC) {
                 [vcs removeObjectsInRange:NSMakeRange(idx, self.viewControllers.count-1)];
                 self.viewControllers = vcs.copy;
                 *stop = YES;
@@ -67,7 +67,7 @@
     if (removeVC) {
         NSMutableArray *vcs = self.viewControllers.mutableCopy;
         [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController*  _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (self == removeVC) {
+            if (vc == removeVC) {
                 [vcs removeObjectAtIndex:idx];
                 self.viewControllers = vcs.copy;
                 *stop = YES;
@@ -107,6 +107,23 @@
     }
     
     return vcs.copy;
+}
+
+/**
+ *替换其中一个VC
+ */
+- (void)replaceVC:(UIViewController *)replaceVC withVC:(UIViewController *)newVC{
+    if (replaceVC && replaceVC) {
+        NSMutableArray *vcs = self.viewControllers.mutableCopy;
+        [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController*  _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (vc == replaceVC) {
+                [vcs insertObject:newVC atIndex:idx+1];
+                [vcs removeObjectAtIndex:idx];
+                self.viewControllers = vcs.copy;
+                *stop = YES;
+            }
+        }];
+    }
 }
 
 @end

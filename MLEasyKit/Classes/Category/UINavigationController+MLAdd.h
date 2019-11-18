@@ -41,6 +41,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSArray<UIViewController *> *)getViewControllersByName:(NSString *)className;
 
+/**
+ *替换其中一个VC
+ */
+- (void)replaceVC:(UIViewController *)replaceVC withVC:(UIViewController *)newVC;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
