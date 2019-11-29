@@ -19,7 +19,7 @@
         self.frame = bounds;
         NSMutableArray *muColors = [NSMutableArray array];
         for (UIColor *color in colors) {
-            [muColors addObject:(__bridge id)color.CGColor];
+            [muColors insertObject:(__bridge id)color.CGColor atIndex:0];
         }
         self.colors = [muColors copy];
         self.startPoint = startPoint;
