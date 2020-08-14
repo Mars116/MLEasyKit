@@ -113,7 +113,7 @@
  *替换其中一个VC
  */
 - (void)replaceVC:(UIViewController *)replaceVC withVC:(UIViewController *)newVC{
-    if (replaceVC && replaceVC) {
+    if (replaceVC && newVC) {
         NSMutableArray *vcs = self.viewControllers.mutableCopy;
         [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController*  _Nonnull vc, NSUInteger idx, BOOL * _Nonnull stop) {
             if (vc == replaceVC) {
